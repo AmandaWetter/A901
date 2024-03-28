@@ -30,7 +30,7 @@ jobs:
       
       - name: Install Asciidoctor 
         run: |
-          gem install asciidoctor
+          sudo gem install asciidoctor
       
       - name: Generate HTML
         run: |
