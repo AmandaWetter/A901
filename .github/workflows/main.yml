@@ -34,7 +34,7 @@ jobs:
       
       - name: Generate HTML
         run: |
-          asciidoctor -o output.html README.adoc 
+          asciidoctor -o $GITHUB_WORKSPACE/output.html README.adoc 
       # Runs a single command using the runners shell
       #- name: asciidoctor-ghpages
       #  uses: manoelcampos/asciidoctor-ghpages-action@v2
@@ -43,12 +43,12 @@ jobs:
       #    asciidoctor_params: --attribute=nofooter
       - name: Move HTML to Repository
         run: |
-          mv output.html $GITHUB_WORKSPACE/output.html
+          mv $GITHUB_WORKSPACE/output.html $GITHUB_WORKSPACE/generated/output.html
       
       - name: Commit HTML
         run: 
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add output.html
+          git add generated/output.html
           git commit -m "Generate HTML from AsciiDoc"
           git push
