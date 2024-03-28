@@ -41,3 +41,14 @@ jobs:
       #  with:
       #    pdf_build: true
       #    asciidoctor_params: --attribute=nofooter
+      - name: Move HTML to Repository
+        run: |
+          mv output.html $GITHUB_WORKSPACE/output.html
+      
+      - name: Commit HTML
+        run: 
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add output.html
+          git commit -m "Generate HTML from AsciiDoc"
+          git push
