@@ -1,11 +1,14 @@
-ifndef::env-github[:toc: left]
+////
+ifndef::env-github[:toc: left] 
 :toc-title: Inhalt
 :toclevels: 3
 :figure-caption: Abbildung
 :example-caption!:
 :table-caption: Tabelle
-:note-caption: Hinweis
+:note-caption: Hinweis 
+////
 // zum Generieren eines PDF aus VS Code (HTML muss mit eingebetteten Bildern generiert werden, damit daraus ein korrektes PDF erstellt werden kann)
+////
 :data-uri:
 :source-highlighter: highlight.js
 :sectnums:
@@ -17,8 +20,10 @@ ifndef::env-github[:toc: left]
 :pdf-theme: themes/pdf-theme.yml
 :pdf-fontsdir: fonts/
 :doctype: book
-
+////
 // Todo Header Styling und Environment ändern auf Doc. Header auf der Webseite muss auf andere Weise integriert werden
+:includedir: docs
+
 ifdef::backend-pdf[]
 include::{includedir}/headerSZ.adoc[]
 endif::[]
@@ -26,10 +31,13 @@ endif::[]
 ifndef::env-github[]
 [.img-logo]
 image:{includedir}/img/logo_kt_sz_rgb.jpg[]
-endif::[]
-
+endif::[]*
+////
 = <Title der Modelldokumentation>
-[.subtitle]#<Untertitel der Modelldokumentation># +
+[.subtitle]#<Untertitel der Modelldokumentation># +  
+////
+
+== Modelldokumentation
 
 // Die Verwiese auf die Inhalte der Dokumentation sollen im README auf Github nicht angezeigt werden.
 ifndef::env-github[]
